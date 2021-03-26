@@ -1,54 +1,56 @@
+import { ACTION, COMPASS, ROTATE } from './Compass'
+
 export class MarsRover {
   execute(command: string) {
-    let facing: string = 'N'
+    let facing: string = COMPASS.NORTH
 
-    const steps = {
+    const position = {
       x: 0,
       y: 0,
     }
 
     for (const commandItem of command) {
-      if (commandItem === 'R') {
+      if (commandItem === ROTATE.RIGHT) {
         facing = this.rotate(facing, commandItem)
       }
 
-      if (commandItem === 'L') {
+      if (commandItem === ROTATE.LEFT) {
         facing = this.rotate(facing, commandItem)
       }
 
-      if (facing === 'N'&& commandItem === 'M') {
-        steps.y++
+      if (facing === COMPASS.NORTH && commandItem === ACTION.MOVE) {
+        position.y++
       }
 
-      if (facing === 'E' && commandItem === 'M') {
-        steps.x++
+      if (facing === COMPASS.EAST && commandItem === ACTION.MOVE) {
+        position.x++
       }
 
-      if (steps.x >= 10) {
-        steps.x = 0
+      if (position.x >= 10) {
+        position.x = 0
       }
 
-      if (steps.y >= 10) {
-        steps.y = 0
+      if (position.y >= 10) {
+        position.y = 0
       }
     }
 
-    return `${steps.x}:${steps.y}:${facing}`
+    return `${position.x}:${position.y}:${facing}`
   }
 
   rotate(facing: string, direction: string): string {
     const position = {
-      'R': {
-        'N': 'E',
-        'E': 'S',
-        'S': 'W',
-        'W':'N'
+      [ROTATE.RIGHT]: {
+        [ COMPASS.NORTH ]: COMPASS.EAST,
+        [ COMPASS.EAST ]: COMPASS.SOUTH,
+        [ COMPASS.SOUTH ]: COMPASS.WEST,
+        [ COMPASS.WEST ]: COMPASS.NORTH
       },
-      'L': {
-        'N': 'W',
-        'W': 'S',
-        'S': 'E',
-        'E': 'N',
+      [ROTATE.LEFT]: {
+        [ COMPASS.NORTH ]: COMPASS.WEST,
+        [ COMPASS.WEST ]: COMPASS.SOUTH,
+        [ COMPASS.SOUTH ]: COMPASS.EAST,
+        [ COMPASS.EAST ]: COMPASS.NORTH,
       }
     }
 
