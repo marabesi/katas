@@ -1,6 +1,10 @@
 import { ACTION, COMPASS, ROTATE } from './Compass'
+import { Grid } from './Grid'
 
 export class MarsRover {
+
+  constructor(private grid: Grid) {}
+
   execute(command: string) {
     let facing: string = COMPASS.NORTH
 
@@ -26,11 +30,11 @@ export class MarsRover {
         position.x++
       }
 
-      if (position.x >= 10) {
+      if (position.x >= this.grid.getX()) {
         position.x = 0
       }
 
-      if (position.y >= 10) {
+      if (position.y >= this.grid.getY()) {
         position.y = 0
       }
     }
