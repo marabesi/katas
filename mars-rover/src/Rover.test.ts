@@ -13,7 +13,16 @@ describe('Rover coordinates', () => {
     [ 'MMMMMM', '0:6:N' ],
     [ 'MMMMMMM', '0:7:N' ],
     [ 'MMMMMMMMMM', '0:0:N' ],
-  ])('moves rover in the X axis (command %s, expected to be at %s)', (coordinates, expected) => {
+  ])('moves rover in the X axis towards NORTH (command %s, expected to be at %s)', (coordinates, expected) => {
+    const rover = new MarsRover(grid);
+
+    expect(rover.execute(coordinates)).toEqual(expected)
+  })
+
+  it.each([
+    [ 'MMMMMMMMMRRMM', '0:7:S' ],
+    [ 'MMRRMM', '0:0:S' ],
+  ])('moves rover in the Y axis towards SOUTH (command %s, expected to be at %s)', (coordinates, expected) => {
     const rover = new MarsRover(grid);
 
     expect(rover.execute(coordinates)).toEqual(expected)
@@ -24,7 +33,16 @@ describe('Rover coordinates', () => {
     [ 'RMM', '2:0:E' ],
     [ 'RMMM', '3:0:E' ],
     [ 'RMMMMMMMMMM', '0:0:E' ],
-  ])('moves rover in the Y axis (command %s, expected to be at %s)', (coordinates, expected) => {
+  ])('moves rover in the X axis towards EAST (command %s, expected to be at %s)', (coordinates, expected) => {
+    const rover = new MarsRover(grid);
+
+    expect(rover.execute(coordinates)).toEqual(expected)
+  })
+
+  it.each([
+    [ 'RMMMMMLLMM', '3:0:W' ],
+    [ 'RMMMMMLLMMMMM', '0:0:W' ],
+  ])('moves rover in the X axis towards WEST (command %s, expected to be at %s)', (coordinates, expected) => {
     const rover = new MarsRover(grid);
 
     expect(rover.execute(coordinates)).toEqual(expected)
@@ -35,7 +53,7 @@ describe('Rover coordinates', () => {
     [ 'RR', '0:0:S' ],
     [ 'RRR', '0:0:W' ],
     [ 'RRRR', '0:0:N' ],
-  ])('rotates the rover R coordinate', (coordinates, expected) => {
+  ])('rotates the rover to the right (R command)', (coordinates, expected) => {
     const rover = new MarsRover(grid);
 
     expect(rover.execute(coordinates)).toEqual(expected)
@@ -46,14 +64,13 @@ describe('Rover coordinates', () => {
      [ 'LL', '0:0:S' ],
      [ 'LLL', '0:0:E' ],
      [ 'LLLL', '0:0:N' ],
-  ])('rotates the rover L coordinate', (coordinates, expected) => {
+  ])('rotates the rover to the left (L command)', (coordinates, expected) => {
     const rover = new MarsRover(grid);
 
     expect(rover.execute(coordinates)).toEqual(expected)
   })
 
   it.each([
-    [ 'MRML', '1:1:N' ],
     [ 'RMMM', '3:0:E' ],
   ])('moves rover with command %s expected to be at %s', (coordinates, expected) => {
     const rover = new MarsRover(grid);
@@ -66,6 +83,8 @@ describe('Acceptance', () => {
   it.each([
     [ 'MMRMMLM', '2:3:N' ],
     [ 'RMMLM', '2:1:N' ],
+    [ 'MRML', '1:1:N' ],
+    [ 'MMMMMRRMMM', '0:2:S' ],
   ])('moving rover with %s expected to be at %s', (coordinates, expected) => {
     const rover = new MarsRover(grid);
 

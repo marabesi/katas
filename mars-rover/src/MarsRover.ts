@@ -26,8 +26,16 @@ export class MarsRover {
         position.y++
       }
 
+      if (facing === COMPASS.SOUTH && commandItem === ACTION.MOVE) {
+        position.y--
+      }
+
       if (facing === COMPASS.EAST && commandItem === ACTION.MOVE) {
         position.x++
+      }
+
+      if (facing === COMPASS.WEST && commandItem === ACTION.MOVE) {
+        position.x--
       }
 
       if (position.x >= this.grid.getX()) {
