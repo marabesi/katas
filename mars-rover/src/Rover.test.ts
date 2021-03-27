@@ -3,7 +3,7 @@ import { Grid } from './Grid'
 
 const grid: Grid = new Grid(10, 10)
 
-describe('Rover coordinates', () => {
+describe('Rover behavior', () => {
   it.each([
     [ 'M', '0:1:N' ],
     [ 'MM', '0:2:N' ],
@@ -79,7 +79,7 @@ describe('Rover coordinates', () => {
   })
 })
 
-describe('Acceptance', () => {
+describe('Test cases from requirements', () => {
   it.each([
     [ 'MMRMMLM', '2:3:N' ],
     [ 'RMMLM', '2:1:N' ],
