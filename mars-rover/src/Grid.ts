@@ -1,3 +1,8 @@
+export interface Position {
+  x: number,
+  y: number
+}
+
 export class Grid {
   constructor(private x: number, private y: number) { }
 
@@ -9,3 +14,4 @@ export class Grid {
     return this.y
   }
 }
+

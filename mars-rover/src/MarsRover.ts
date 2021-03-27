@@ -1,71 +1,77 @@
 import { ACTION, COMPASS, ROTATE } from './Compass'
-import { Grid } from './Grid'
+import { Grid, Position } from './Grid'
+import { State } from './State'
+import { StartState } from './States/Start'
+import { RotateRight } from './States/RotateRight'
+import { RotateLeft } from './States/RotateLeft'
+import { MoveNorth } from './States/MoveNorth'
+import { MoveSouth } from './States/MoveSouth'
+import { MoveEast } from './States/MoveEast'
+import { MoveWest } from './States/MoveWest'
 
 export class MarsRover {
 
-  constructor(private grid: Grid) {}
+  private state: State
+  private grid: Grid
+  facing: string
+  position: Position
+
+  constructor(grid: Grid) {
+    this.grid = grid
+  }
+
+  setState(state: State): void {
+    this.state = state
+  }
+
+  getState(): State {
+    return this.state
+  }
 
   execute(command: string) {
-    let facing: string = COMPASS.NORTH
-
-    const position = {
-      x: 0,
-      y: 0,
-    }
+    const start: StartState = new StartState()
+    start.doAction(this)
 
     for (const commandItem of command) {
       if (commandItem === ROTATE.RIGHT) {
-        facing = this.rotate(facing, commandItem)
+        const rotateRight: State = new RotateRight()
+        rotateRight.doAction(this)
       }
 
       if (commandItem === ROTATE.LEFT) {
-        facing = this.rotate(facing, commandItem)
+        const rotateLeft: State = new RotateLeft();
+        rotateLeft.doAction(this)
       }
 
-      if (facing === COMPASS.NORTH && commandItem === ACTION.MOVE) {
-        position.y++
+      if (this.facing === COMPASS.NORTH && commandItem === ACTION.MOVE) {
+        const moveNorth: State = new MoveNorth()
+        moveNorth.doAction(this)
       }
 
-      if (facing === COMPASS.SOUTH && commandItem === ACTION.MOVE) {
-        position.y--
+      if (this.facing === COMPASS.SOUTH && commandItem === ACTION.MOVE) {
+        const moveNorth: State = new MoveSouth()
+        moveNorth.doAction(this)
       }
 
-      if (facing === COMPASS.EAST && commandItem === ACTION.MOVE) {
-        position.x++
+      if (this.facing === COMPASS.EAST && commandItem === ACTION.MOVE) {
+        const moveEast: State = new MoveEast()
+        moveEast.doAction(this)
       }
 
-      if (facing === COMPASS.WEST && commandItem === ACTION.MOVE) {
-        position.x--
+      if (this.facing === COMPASS.WEST && commandItem === ACTION.MOVE) {
+        const moveWest: State = new MoveWest()
+        moveWest.doAction(this)
       }
 
-      if (position.x >= this.grid.getX()) {
-        position.x = 0
+      if (this.position.x >= this.grid.getX()) {
+        this.position.x = 0
       }
 
-      if (position.y >= this.grid.getY()) {
-        position.y = 0
-      }
-    }
-
-    return `${position.x}:${position.y}:${facing}`
-  }
-
-  rotate(facing: string, direction: string): string {
-    const position = {
-      [ROTATE.RIGHT]: {
-        [ COMPASS.NORTH ]: COMPASS.EAST,
-        [ COMPASS.EAST ]: COMPASS.SOUTH,
-        [ COMPASS.SOUTH ]: COMPASS.WEST,
-        [ COMPASS.WEST ]: COMPASS.NORTH
-      },
-      [ROTATE.LEFT]: {
-        [ COMPASS.NORTH ]: COMPASS.WEST,
-        [ COMPASS.WEST ]: COMPASS.SOUTH,
-        [ COMPASS.SOUTH ]: COMPASS.EAST,
-        [ COMPASS.EAST ]: COMPASS.NORTH,
+      if (this.position.y >= this.grid.getY()) {
+        this.position.y = 0
       }
     }
 
-    return position[direction][facing]
+    return `${this.position.x}:${this.position.y}:${this.facing}`
   }
 }
