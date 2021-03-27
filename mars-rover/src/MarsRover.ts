@@ -1,6 +1,6 @@
 import { ACTION, COMPASS, ROTATE } from './Compass'
 import { Grid, Position } from './Grid'
-import { State } from './State'
+import { Context, State } from './State'
 import { StartState } from './States/Start'
 import { RotateRight } from './States/RotateRight'
 import { RotateLeft } from './States/RotateLeft'
@@ -8,8 +8,10 @@ import { MoveNorth } from './States/MoveNorth'
 import { MoveSouth } from './States/MoveSouth'
 import { MoveEast } from './States/MoveEast'
 import { MoveWest } from './States/MoveWest'
+import { WrapAroundX } from './States/WrapAroundX'
+import { WrapAroundY } from './States/WrapAroundY'
 
-export class MarsRover {
+export class MarsRover implements Context {
 
   private state: State
   private grid: Grid
@@ -64,11 +66,13 @@ export class MarsRover {
       }
 
       if (this.position.x >= this.grid.getX()) {
-        this.position.x = 0
+        const wrapAroundX: State = new WrapAroundX()
+        wrapAroundX.doAction(this)
       }
 
       if (this.position.y >= this.grid.getY()) {
-        this.position.y = 0
+        const wrapAroundY: State = new WrapAroundY()
+        wrapAroundY.doAction(this)
       }
     }
 
