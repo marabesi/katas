@@ -15,7 +15,7 @@ export class MarsRover implements Context {
 
   private state: State
   private grid: Grid
-  facing: string
+  facing: COMPASS.NORTH | COMPASS.SOUTH | COMPASS.WEST | COMPASS.EAST
   position: Position
 
   constructor(grid: Grid) {
