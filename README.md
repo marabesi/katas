@@ -5,3 +5,8 @@ the list is as follows:
 
 - [Mars rover](./mars-rover)
 - [Bags](./bags)
+
+## Katas source
+
+- [Katalyst](https://katalyst.codurance.com)
+- [Codingbat](https://codingbat.com/java)
