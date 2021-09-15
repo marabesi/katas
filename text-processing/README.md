@@ -46,4 +46,19 @@ Besides the previous features, the text processing also should have:
 1. A way to ignore a given piece of text to analyse (For example, a code snippets)
 2. A way to offer stop words and remove them from the analysis
 
+Given the example for 1, this would be a text with code snippets:
 
+``` text
+Hello, this is an example for you to practice. You should grab
+this text and make it as your test case. For example,
+the code below depicts:
+
+` ` `javascript
+if (true) {
+  console.log(true)
+}
+` ` `
+
+```
+
+The text processing output should ignore the code snippet.
