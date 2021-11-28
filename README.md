@@ -5,8 +5,11 @@ the list is as follows:
 
 - [Mars rover](./mars-rover)
 - [Bags](./bags)
+- [Text processing](./text-processing)
+- [Shopping basket](./shopping-basket)
 
 ## Katas source
 
 - [Katalyst](https://katalyst.codurance.com)
 - [Codingbat](https://codingbat.com/java)
+- [Sammancoaching](https://sammancoaching.org/kata_descriptions)
