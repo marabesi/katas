@@ -62,3 +62,5 @@ if (true) {
 ```
 
 The text processing output should ignore the code snippet.
+
+refs http://katalyst.codurance.io/text-processing
