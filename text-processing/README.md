@@ -96,4 +96,4 @@ The text has in total 21 words
 Note that, the word **should** is the same, and it does not goes up
 in the list as **should** appears four times (more than the word **you**).
 
-refs http://katalyst.codurance.io/text-processing
+refs https://katalyst.codurance.com/text-processing
