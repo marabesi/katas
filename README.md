@@ -7,6 +7,7 @@ the list is as follows:
 - [Bags](./bags)
 - [Text processing](./text-processing)
 - [Shopping basket](./shopping-basket)
+- [Bank kata](./bank)
 
 ## Katas source
 
