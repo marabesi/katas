@@ -1,0 +1,13 @@
+> Set Current Date - "18/10/2021"
+
+> Fridge Door Opened
+> Item added - name: "Milk", expiry: "21/10/21", condition: "sealed"
+> Item added - name: "Cheese", expiry: "18/11/21", condition: "sealed"
+> Item added - name: "Beef", expiry: "20/10/21", condition: "sealed"
+> Item added - name: "Lettuce", expiry: "22/10/21", condition: "sealed"
+> Fridge Door Closed
+
+Beef: 2 day remaining
+Milk: 3 days remaining
+Lettuce: 4 days remaining
+Cheese: 31 days remaining

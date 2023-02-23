@@ -40,9 +40,7 @@
 
 > (Day Over)
 
-EXPIRED:
-
-Cheese    - 27 days remaining
-Milk      - 4 days remaining
-Peppers   - 1 day remaining
 Lettuce   - 0 days remaining
+Peppers   - 1 day remaining
+Milk      - 4 days remaining
+Cheese    - 27 days remaining

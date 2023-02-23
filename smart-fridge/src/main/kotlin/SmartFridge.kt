@@ -5,6 +5,7 @@ class SmartFridge(
     private val output: Output,
     repository: SmartFridgeRepository
 ) {
+
     fun open() {
         TODO("SmartFridge:open Not yet implemented")
     }

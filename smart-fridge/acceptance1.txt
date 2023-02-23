@@ -1,0 +1,6 @@
+> Set Current Date - "18/10/2021"
+> Fridge Door Opened
+> Item added - name: "Milk", expiry: "18/10/21", condition: "sealed"
+> Fridge Door Closed
+
+Milk: 0 days remaining

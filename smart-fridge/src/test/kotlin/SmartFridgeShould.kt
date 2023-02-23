@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test
 import java.time.Instant
 
 class SmartFridgeShould {
+    val output = FridgeWriter()
 
     @Test
     fun `open and close fridge with different items`() {
