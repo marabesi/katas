@@ -1,0 +1,3 @@
+class InMemoryRepository : SmartFridgeRepository {
+
+}

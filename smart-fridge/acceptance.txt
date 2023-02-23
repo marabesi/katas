@@ -1,0 +1,48 @@
+> Set Current Date - "18/10/2021"
+
+> Fridge Door Opened
+> Item added - name: "Milk", expiry: "21/10/21", condition: "sealed"
+> Item added - name: "Cheese", expiry: "18/11/21", condition: "sealed"
+> Item added - name: "Beef", expiry: "20/10/21", condition: "sealed"
+> Item added - name: "Lettuce", expiry: "22/10/21", condition: "sealed"
+> Fridge Door Closed
+
+> (Day Over)
+
+> Fridge Door Opened
+> Fridge Door Closed
+
+> Fridge Door Opened
+> Fridge Door Closed
+
+> Fridge Door Opened
+> Item removed - name: "Milk"
+> Fridge Door Closed
+
+> Fridge Door Opened
+> Item added - name: "Milk", expiry: "26/10/21", condition: "opened"
+> Item added - name: "Peppers", expiry: "23/10/21", condition: "opened"
+> Fridge Door Closed
+
+> (Day Over)
+
+> Fridge Door Opened
+> Item removed - name: "Beef"
+> Item removed - name: "Lettuce"
+> Fridge Door Closed
+
+> Fridge Door Opened
+> Item added - name: "Lettuce", expiry: "22/10/21", condition: "opened"
+> Fridge Door Closed
+
+> Fridge Door Opened
+> Fridge Door Closed
+
+> (Day Over)
+
+EXPIRED:
+
+Cheese    - 27 days remaining
+Milk      - 4 days remaining
+Peppers   - 1 day remaining
+Lettuce   - 0 days remaining
