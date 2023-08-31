@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
     "lib": [
-        "es5",
-        "es6"
+      "es5",
+      "es6"
     ],
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "inlineSources": true
+    "inlineSources": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@badeball/cypress-cucumber-preprocessor/*": [
+        "./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"
+      ]
+    }
   }
 }
