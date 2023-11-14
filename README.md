@@ -3,11 +3,11 @@
 This is a repo where I keep track of the katas I have done, at the moment
 the list is as follows:
 
-- [Mars rover](./mars-rover)
-- [Bags](./bags)
-- [Text processing](./text-processing)
-- [Shopping basket](./shopping-basket)
-- [Bank kata](./bank)
+- [Mars rover](./solutions/mars-rover)
+- [Bags](./solutions/bags)
+- [Text processing](./solutions/text-processing)
+- [Shopping basket](./solutions/shopping-basket)
+- [Bank kata](./solutions/bank)
 
 ## Katas source
 
