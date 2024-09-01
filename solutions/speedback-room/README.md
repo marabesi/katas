@@ -1,6 +1,11 @@
-# Template
+# Speedback kata
 
-This is a template that can be used for writing any code for a kata, the setup is configured with:
+## Learnings
 
-- jest
-- typescript
+- https://www.typescriptlang.org/play/?#example/types-vs-interfaces
+  - takeaways:
+    - we recommend you use interfaces over type aliases to get better errors
+    - interfaces are open and type aliases are closed
+- assert arrays of arrays
+  - https://stackoverflow.com/questions/40135684/is-there-an-array-equality-match-function-that-ignores-element-position-in-jest
+  - 
