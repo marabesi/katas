@@ -142,6 +142,14 @@ export class Speedback {
   makeRoomFor(): Rounds[] {
     const teamMembers = this.team.length;
 
+    if (!teamMembers) {
+      return [];
+    }
+
+    if (teamMembers % 2) {
+      this.team.push({ id: "-", name: "Alone" })
+    }
+
     for (let i = 0; i < teamMembers; i++) {
       const possiblePairs = this.fillAllPossibleMatchesForA(this.team[i]);
       this.matrixOfPairs[i] = [
