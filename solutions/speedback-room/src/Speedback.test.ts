@@ -4,7 +4,7 @@ describe('Speedback room', () => {
   it('empty team should return empty array', () => {
     const team: Member[] = []
 
-    const speedback = new Speedback(team).makeRoomFor();
+    const speedback = new Speedback(team).shuffleRounds();
 
     expect(speedback).toEqual([]);
   });
@@ -18,7 +18,7 @@ describe('Speedback room', () => {
       id: '-',
       name: 'Alone'
     };
-    const speedback = new Speedback(team).makeRoomFor();
+    const speedback = new Speedback(team).shuffleRounds();
 
     expect(speedback[0].pairs).toIncludeAllMembers([[ team[0], alone ] ]);
   });
@@ -30,7 +30,7 @@ describe('Speedback room', () => {
       {id: '3', name: 'Maria'},
     ]
 
-    const speedback = new Speedback(team).makeRoomFor();
+    const speedback = new Speedback(team).shuffleRounds();
 
     const alone: Member = {
       id: '-',
@@ -59,7 +59,7 @@ describe('Speedback room', () => {
       {id: '2', name: 'John'},
     ]
 
-    const speedback = new Speedback(team).makeRoomFor();
+    const speedback = new Speedback(team).shuffleRounds();
 
     expect(speedback[0].pairs[0]).toEqual(expect.arrayContaining([team[0], team[1]]));
   });
@@ -72,7 +72,7 @@ describe('Speedback room', () => {
       { id: '4', name: 'Clara' },
     ]
 
-    const speedback = new Speedback(team).makeRoomFor();
+    const speedback = new Speedback(team).shuffleRounds();
 
     expect(speedback[0].pairs).toEqual([
       [team[0], team[1]],

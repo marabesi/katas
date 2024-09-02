@@ -139,7 +139,7 @@ export class Speedback {
     }
   }
 
-  makeRoomFor(): Rounds[] {
+  shuffleRounds(): Rounds[] {
     const teamMembers = this.team.length;
 
     if (!teamMembers) {
