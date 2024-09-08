@@ -8,7 +8,7 @@ describe('Matrix', () => {
       [4, 5, 6],
     ]);
 
-    expect(matrix.turnClockwiseOnce()).toEqual([
+    expect(matrix.turnClockwiseTimes(1)).toEqual([
       [6, 1, 2],
       [3, 4, 5],
     ]);

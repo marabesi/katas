@@ -7,7 +7,7 @@ export class MatrixOperations {
     this.cols = this.matrix[0].length;
 	}
 
-  turnClockwiseOnce(isFixed: boolean = false): Array<Array<number>> {
+  private turnClockwise(times: number, isFixed: boolean = false): Array<Array<number>> {
     const list = this.matrix.flat();
     const next = [ ...list];
 
@@ -33,8 +33,12 @@ export class MatrixOperations {
     return result;
   }
 
+  turnClockwiseTimes(times: number): Array<Array<number>> {
+    return this.turnClockwise(times, false);
+  }
+
   turnClockwiseFirstFixedTimes(times: number): Array<Array<number>> {
-    return this.turnClockwiseOnce(true);
+    return this.turnClockwise(times, true);
   }
 }
 
